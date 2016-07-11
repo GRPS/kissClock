@@ -15,4 +15,13 @@ angular.module('kissClock')
     $scope.brightnessMax = (sharedData.colour.list).length-1;
     $scope.brightnessIndex = sharedData.colour.index;
 
+
+    $ionicPlatform.ready(function() {
+
+        window.plugins.insomnia.allowSleepAgain(
+            function(msg) {alert(msg)}
+        );
+
+    });
+
 });
