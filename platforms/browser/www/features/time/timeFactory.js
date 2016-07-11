@@ -15,11 +15,6 @@ angular.module('kissClock')
 
     self.showSeconds = function() {return sharedData.time.showSeconds ? ":ss" : "";}
 
-    self.toggleShowSeconds = function() {
-        sharedData.time.showSeconds = !sharedData.time.showSeconds;
-        return sharedData.time.showSeconds;
-    }
-
     /* ================================================ */
     /* Internal functions */
     /* ================================================ */
