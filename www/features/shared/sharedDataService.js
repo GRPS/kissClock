@@ -12,15 +12,6 @@ angular.module('kissClock')
                     start   : 9,            //Colour to start with.
                     index   : 9             //Colour index which user may have changed.
                 },
-            alarm : {
-                    enabled : false,
-                    time    : null
-                    },
-            date : {
-                    enabled : true,
-                    format : "EEEE, dd MMMM yyyy",
-                    formats : ['EEEE, dd MMMM yyyy','dd/mm/yyyy']
-                    },
             time : {
                     show12Hour          : false,
                     showHourLeadingZero : true,

@@ -1,16 +1,11 @@
 angular.module('kissClock')
 
-.controller('ConfigCtrl', function($ionicPlatform, $scope, $state, sharedData, ConfigFactory, ColourFactory, AlarmFactory) {
+.controller('ConfigCtrl', function($ionicPlatform, $scope, $state, sharedData, ConfigFactory, ColourFactory) {
 
     $ionicPlatform.ready(function() {
 
-        // window.plugins.insomnia.allowSleepAgain(
-        //     function(msg) {console.log(msg)}
-        // );
-
         $scope.config = sharedData;
         $scope.myColor = sharedData.colour.user;
-        AlarmFactory.setInitialTime();
 
         $scope.back = function() {
             sharedData.colour.list = [];
