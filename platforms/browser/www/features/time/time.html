@@ -9,8 +9,8 @@
 
     <ion-content id="time" has-header="true" padding="true" overflow-scroll="false" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-hold="showConfig()">
         <div class="row row-center">
-            <div class="col col-center">
-                <h1 data-fittext class="text-center" ng-style="{'color':myColor}">{{ clock | date: showHours+'mm'+showSeconds}}</h1>
+            <div class="col col-center text-center">
+                <h1 data-fittext ng-style="{'color':myColor}">{{ clock | date: showHours+'mm'+showSeconds}}</h1>
             </div>
         </div>
     </ion-content>

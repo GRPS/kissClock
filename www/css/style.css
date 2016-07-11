@@ -3,11 +3,6 @@
     background-color: #000000 !important;
 }
 
-
-.time {
-    font-size: 20vw;
-}
-
 #time .bar { background-color:#000000 !important; border-bottom-color: #000000; background-image: none !important; }
 #time .scroll-content {background-color:#000000 !important;}
 
