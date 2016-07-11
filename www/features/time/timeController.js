@@ -4,16 +4,16 @@ angular.module('kissClock')
 
     $ionicPlatform.ready(function() {
 
-        window.plugins.insomnia.keepAwake(
-            function(msg) {console.log(msg)}
-        );
+        // window.plugins.insomnia.keepAwake(
+        //     function(msg) {console.log(msg)}
+        // );
 
-        var alarmActive = (alarmActive == undefined ? AlarmFactory.isEnabled() : alarmActive);
-        var dtAlarm = (dtAlarm == undefined ? null : dtAlarm);
-
-        if(alarmActive && dtAlarm == null) {
-            dtAlarm = AlarmFactory.getAlarmTime();
-        }
+        // var alarmActive = (alarmActive == undefined ? AlarmFactory.isEnabled() : alarmActive);
+        // var dtAlarm = (dtAlarm == undefined ? null : dtAlarm);
+        //
+        // if(alarmActive && dtAlarm == null) {
+        //     dtAlarm = AlarmFactory.getAlarmTime();
+        // }
 
         var tick = function() {
             dt = new Date();

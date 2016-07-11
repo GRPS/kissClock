@@ -4,9 +4,9 @@ angular.module('kissClock')
 
     $ionicPlatform.ready(function() {
 
-        window.plugins.insomnia.allowSleepAgain(
-            function(msg) {console.log(msg)}
-        );
+        // window.plugins.insomnia.allowSleepAgain(
+        //     function(msg) {console.log(msg)}
+        // );
 
         $scope.config = sharedData;
         $scope.myColor = sharedData.colour.user;
