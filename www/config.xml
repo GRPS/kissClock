@@ -23,7 +23,8 @@
   </feature>
 
   <plugin name="cordova-plugin-insomnia" />
-  
+  <plugin name="cordova-plugin-dialogs" />
+
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>

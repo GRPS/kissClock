@@ -11,17 +11,9 @@
         <h1 class="title"></h1>
         <div class="buttons">
             <button class="button button-clear icon ion-ios-alarm-outline" ng-style="{'color':myColor}" ng-show="alarmEnabled">{{alarmTime | date: "HH:mm"}}</button>
+            <button class="button button-clear icon ion-ios-alarm-outline" ng-style="{'color':myDarkestColor}" ng-show="!alarmEnabled"></button>
         </div>
     </ion-footer-bar>
-
-    <!-- <ion-content class="has-header has-footer" scroll="false" overflow-scroll="false" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-hold="showConfig()">
-        <div class="row row-center">
-            <div class="col col-center">
-                <h1 data-fittext class="text-center" ng-style="{'color':myColor}" ng-show="showSeconds">{{ clock | date:'HH:mm:ss'}}</h1>
-                <h1 data-fittext class="text-center" ng-style="{'color':myColor}" ng-show="!showSeconds">{{ clock | date:'HH:mm'}}</h1>
-            </div>
-        </div>
-    </ion-content> -->
 
     <ion-content id="time" has-header="true" has-footer="true" padding="true" overflow-scroll="false" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-hold="showConfig()">
         <div class="row row-center">
