@@ -4,7 +4,7 @@ angular.module('kissClock')
 
     return {
             colour : {
-                    user    : "#499C32",    //User defined color.
+                    user    : "#317A1C",    //User defined color.
                     min     : -80,          //Shade user color from percentage.
                     max     : 80,           //Shade user color to percentage.
                     step    : 10,           //Shade user color step.
@@ -15,7 +15,7 @@ angular.module('kissClock')
             time : {
                     show12Hour          : false,
                     showHourLeadingZero : true,
-                    showSeconds         : true
+                    showSeconds         : false
                     }
     }
 
