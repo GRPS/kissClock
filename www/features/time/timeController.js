@@ -15,9 +15,7 @@ angular.module('kissClock')
 
     $ionicPlatform.ready(function() {
 
-        window.plugins.insomnia.keepAwake(
-            function(msg) {alert(msg)}
-        );
+        window.plugins.insomnia.keepAwake();
 
     });
 
