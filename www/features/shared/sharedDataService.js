@@ -13,8 +13,8 @@ angular.module('kissClock')
                     index   : 9             //Colour index which user may have changed.
                 },
             alarm : {
-                    enabled : true,
-                    time    : "19:28:00"
+                    enabled : false,
+                    time    : null
                     },
             date : {
                     enabled : true,

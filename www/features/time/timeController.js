@@ -1,43 +1,62 @@
 angular.module('kissClock')
 
-.controller('TimeCtrl', function($scope, $state, $interval, TimeFactory, AlarmFactory) {
+.controller('TimeCtrl', function($ionicPlatform, $scope, $state, $interval, $cordovaToast, TimeFactory, AlarmFactory) {
 
-    var alarmActive = (alarmActive == undefined ? AlarmFactory.isEnabled() : alarmActive);
-    var adt = null;
-    if(alarmActive && adt == null) {
+    $ionicPlatform.ready(function() {
 
-        adt = new Date();
-        y = adt.getFullYear();
-        m = adt.getMonth();
-        d = adt.getDate();
+        window.plugins.insomnia.keepAwake(
+            function(msg) {console.log(msg)}
+        );
 
-        aa = AlarmFactory.getAlarmTime();
-        v = aa.split(":");
-        hr = v[0];
-        mn = v[1];
-        se = v[2]
+        var alarmActive = (alarmActive == undefined ? AlarmFactory.isEnabled() : alarmActive);
+        var dtAlarm = (dtAlarm == undefined ? null : dtAlarm);
 
-        adt = new Date(y, m, d, hr, mn, se, 0);
-        sadt = adt.toLocaleString();
-
-    }
-
-    var tick = function() {
-        dt = new Date();
-        $scope.clock = dt;
-
-        if(alarmActive && dt.toLocaleString() == sadt) {
-            navigator.notification.beep(10);
-            alert("boo!");
+        if(alarmActive && dtAlarm == null) {
+            dtAlarm = AlarmFactory.getAlarmTime();
         }
 
-    }
+        var tick = function() {
+            dt = new Date();
+            dts = dt.toLocaleString();
+            $scope.clock = dt;
 
-    tick();
-    $interval(tick, 1000);
+            if(alarmActive && dts == dtAlarm) {
+                navigator.notification.beep(1);
+                navigator.notification.alert(
+                                            'Now what?',        // message
+                                            function(){},       // callback
+                                            'Alarm Actiated',   // title
+                                            'OK'                // buttonName
+                                            );
+            }
 
-    $scope.showHours = TimeFactory.showHours();
-    $scope.showSeconds = TimeFactory.showSeconds();
-    $scope.showConfig = function() {$state.go("config");}
+        }
+
+        tick();
+        $interval(tick, 1000);
+
+        $scope.showHours = TimeFactory.showHours();
+        $scope.showSeconds = TimeFactory.showSeconds();
+        $scope.showConfig = function() {$state.go("config");}
+
+        // $cordovaToast.show('Here is a message', 'long', 'center').then(function(success) {
+        //     // success
+        // }, function (error) {
+        //     // error
+        // });
+        //
+        // $cordovaToast.showShortTop('Here is a message').then(function(success) {
+        //     // success
+        // }, function (error) {
+        //     // error
+        // });
+        //
+        // $cordovaToast.showLongBottom('Here is a message').then(function(success) {
+        //     // success
+        // }, function (error) {
+        //     // error
+        // });
+
+    });
 
 });

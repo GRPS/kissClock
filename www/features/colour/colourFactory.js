@@ -13,6 +13,10 @@ angular.module('kissClock')
         return sharedData.colour.list[sharedData.colour.index];
     }
 
+    self.getDarkestColor = function() {
+        return sharedData.colour.list[0];
+    }
+
     self.colorLighter = function() {
         sharedData.colour.index = (sharedData.colour.index == (sharedData.colour.list.length-1) ? sharedData.colour.index : sharedData.colour.index+1);
         return self.getColor();
