@@ -17,18 +17,18 @@ angular.module('kissClock')
 
         var tick = function() {
             dt = new Date();
-            dts = dt.toLocaleString();
             $scope.clock = dt;
 
-            if(alarmActive && dts == dtAlarm) {
-                navigator.notification.beep(1);
-                navigator.notification.alert(
-                                            'Now what?',        // message
-                                            function(){},       // callback
-                                            'Alarm Actiated',   // title
-                                            'OK'                // buttonName
-                                            );
-            }
+            // dts = dt.toLocaleString();
+            // if(alarmActive && dts == dtAlarm) {
+            //     navigator.notification.beep(1);
+            //     navigator.notification.alert(
+            //                                 'Now what?',        // message
+            //                                 function(){},       // callback
+            //                                 'Alarm Actiated',   // title
+            //                                 'OK'                // buttonName
+            //                                 );
+            // }
 
         }
 
