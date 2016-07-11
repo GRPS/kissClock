@@ -1,0 +1,113 @@
+<ion-view id="config" view-title="kissClock">
+
+    <ion-header-bar class="bar-positive" align-title="center">
+        <div class="buttons">
+            <a class="button button-clear icon ion-ios-arrow-left" ng-click="back()"></a>
+        </div>
+        <h1 class="title">Configuration</h1>
+    </ion-header-bar>
+
+    <ion-content id="config" has-header="true">
+
+        <ion-list show-delete="false" can-swipe="false">
+
+            <!-- <label class="item item-divider">
+                Preview
+  			</label>
+
+            <ion-item class="text-center" style="font-weight:bold; font-size:24px;background-color:#000000;">
+                <span ng-style="{'color':myColor}">12:00:00</span>
+            </ion-item> -->
+
+            <label class="item item-divider">
+    			Colour
+  			</label>
+
+            <ion-item>
+                Choose
+            <label class="toggle item-note">
+                <button class="button button-small" color-picker ng-model="config.colour.user" modal-title="Choose a color" color-box="{{config.colour.user}}"></button>
+            </lanbel>
+            </ion-item>
+            <ion-item class="ptn pbn">
+                <div class="list">
+                  <div class="item range range-positive">
+                    <i class="icon ion-ios-sunny-outline"></i>
+                    <input type="range" name="brightness" ng-model="config.colour.index" min="brightnessMin" max="{{brightnessMax}}" value="brightnessIndex">
+                    <i class="icon ion-ios-sunny"></i>
+                  </div>
+                </div>
+            </ion-item>
+
+            <label class="item item-divider">
+    			Time
+  			</label>
+
+            <ion-item>
+                12 hour format
+                <label class="toggle item-note">
+                    <input type="checkbox" ng-model="config.time.show12Hour">
+                    <div class="track"><div class="handle"></div></div>
+                </label>
+            </ion-item>
+            <ion-item>
+                Show hour leading zero
+                <label class="toggle item-note">
+                    <input type="checkbox" ng-model="config.time.showHourLeadingZero">
+                    <div class="track"><div class="handle"></div></div>
+                </label>
+            </ion-item>
+            <ion-item>
+                Show seconds
+                <label class="toggle item-note">
+                    <input type="checkbox" ng-model="config.time.showSeconds">
+                    <div class="track"><div class="handle"></div></div>
+                </label>
+            </ion-item>
+
+            <label class="item item-divider">
+                Date
+            </label>
+
+            <ion-item>
+                Show date
+                <label class="toggle item-note">
+                    <input type="checkbox" ng-model="config.date.enabled">
+                    <div class="track"><div class="handle"></div></div>
+                </label>
+            </ion-item>
+            <ion-item>
+                Format
+                <label class="toggle item-note">
+                    <button class="button button-clear buttom-small" style="color:#444444;" modal-select ng-model="config.date.format" options="config.date.formats" modal-title="Select a format" header-footer-class="bar-positive">
+                    {{config.date.format}}
+                    <span class="option">
+                        {{option}}
+                    </span>
+                    </button>
+                </label>
+            </ion-item>
+
+            <label class="item item-divider">
+    			Alarm
+  			</label>
+
+            <ion-item>
+                Show alarm
+                <label class="toggle item-note">
+                    <input type="checkbox" ng-model="config.alarm.enabled">
+                    <div class="track"><div class="handle"></div></div>
+                </label>
+            </ion-item>
+            <ion-item>
+                Time
+                <label class="item-note">
+                    <input type="time" ng-model="config.alarm.time"/>
+                </label>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>
