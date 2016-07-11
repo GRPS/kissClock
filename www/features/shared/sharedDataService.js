@@ -15,7 +15,7 @@ angular.module('kissClock')
             time : {
                     show12Hour          : false,
                     showHourLeadingZero : true,
-                    showSeconds         : true
+                    showSeconds         : false
                     }
     }
 
