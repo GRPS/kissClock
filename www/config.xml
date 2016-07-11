@@ -16,14 +16,12 @@
   <preference name="FadeSplashScreenDuration" value="0"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
   <preference name="Fullscreen" value="true" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
 
-  <plugin name="cordova-plugin-insomnia" />
-  <plugin name="cordova-plugin-dialogs" />
 
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
