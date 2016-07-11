@@ -1,6 +1,6 @@
 angular.module('kissClock')
 
-.controller('TimeCtrl', function($ionicPlatform, $scope, $state, $interval, $cordovaToast, TimeFactory) {
+.controller('TimeCtrl', function($ionicPlatform, $scope, $state, $interval, TimeFactory) {
 
     $ionicPlatform.ready(function() {
 
