@@ -16,6 +16,11 @@ angular.module('kissClock')
                     show12Hour          : false,
                     showHourLeadingZero : true,
                     showSeconds         : false
+                },
+            date : {
+                    enabled : true,
+                    format : "EEEE, dd MMMM yyyy",
+                    formats : ['EEEE, dd MMMM yyyy','dd/mm/yyyy']
                     }
     }
 
