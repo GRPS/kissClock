@@ -9,6 +9,9 @@
     "installed_plugins": {
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.kissclock794237"
+        },
+        "cordova-plugin-insomnia": {
+            "PACKAGE_NAME": "com.ionicframework.kissclock794237"
         }
     },
     "dependent_plugins": {
