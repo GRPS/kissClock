@@ -7,7 +7,7 @@ var db = null;
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitText'])
 
-.run(function($ionicPlatform, $cordovaSQLite, DBA) {
+.run(function($ionicPlatform, DBA, sharedData) {
 
     $ionicPlatform.ready(function() {
 
@@ -20,38 +20,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             StatusBar.hide();
             ionic.Platform.isFullScreen = true;
         }
-
-        alert('app.js start');
-        if (ionic.Platform.isAndroid() || ionic.Platform.isIOS() ){
-            try {
-                alert('device a');
-                db = $cordovaSQLite.openDB({ name: "kissClock.db" });
-                alert('device b');
-            } catch (error) {
-                alert(error);
-            }
-        } else {
-            alert('browser');
-            db = window.openDatabase('kissClock.db', '1.0', 'kissClock.db', 100 * 1024 * 1024);
-        }
-        alert('done db');
-        DBA.prepareTables()
-            .then(function(cnt) {
-                alert('cnt = ' + cnt);
-                if(cnt == 0) {
-                    DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(sharedData)]);
-                } else {
-                    DBA.query("SELECT c.rowid AS id, c.key AS key, c.obj AS obj FROM Config c WHERE c.rowid = 1")
-                        .then(function(result){
-                            res = DBA.getFirst(result);
-                            alert(res.obj);
-                            sharedData = JSON.parse(res.obj);
-                            alert('app.js end');
-                        });
-                }
-            })
-
-
 
     });
 

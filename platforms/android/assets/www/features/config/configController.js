@@ -6,16 +6,16 @@ angular.module('kissClock')
     $scope.myColor = sharedData.colour.user;
 
     $scope.back = function() {
+        
         sharedData.colour.list = [];
         $scope.myColor = ColourFactory.getColor();
-        alert('remove old db config');
+        j = angular.toJson(sharedData);
+
         DBA.query("DELETE FROM Config;")
             .then(function() {
-                alert('insert new db config');
-                DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(sharedData)]);
+                DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", j]);
             })
             .then(function() {
-                alert('db config done');
                 $state.go("time");
             })
     }
