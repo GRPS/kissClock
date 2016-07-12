@@ -7,7 +7,7 @@ var db = null;
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitText'])
 
-.run(function($ionicPlatform, DBA) {
+.run(function($ionicPlatform, $cordovaSQLite, DBA, ColourFactory, ConfigFactory, DateFactory, FontFactory, TimeFactory) {
 
     $ionicPlatform.ready(function() {
 
