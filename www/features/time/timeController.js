@@ -15,9 +15,6 @@ angular.module('kissClock')
             tick();
             $interval(tick, 1000);
 
-            $scope.showHours = TimeFactory.showHours();
-            $scope.showSeconds = TimeFactory.showSeconds();
-
         });
 
     });

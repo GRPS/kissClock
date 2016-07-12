@@ -1,6 +1,6 @@
 angular.module('kissClock')
 
-.controller('ColorCtrl', function($ionicPlatform, $scope, DBA, ColourFactory, FontFactory) {
+.controller('ColorCtrl', function($ionicPlatform, $scope, sharedData, DBA, ColourFactory, TimeFactory, FontFactory) {
 
     //Do something before the view is rendered. Must be kept to bare minimum, so user is not held waiting necessarily.
     $scope.$on("$ionicView.beforeEnter", function(event, data) {
@@ -11,7 +11,7 @@ angular.module('kissClock')
             DBA.prepareTables()
                 .then(function(cnt) {
                     if(cnt == 0) {
-                        DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(sharedData)]);
+                        DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(options)]);
                     }
                 })
                 .then(function() {
@@ -19,10 +19,16 @@ angular.module('kissClock')
                 })
                 .then(function(result){
                     res = DBA.getFirst(result);
-                    sharedData = JSON.parse(res.obj);
-                    alert('loading ... ' + sharedData);
+                    j = JSON.parse(res.obj);
+                    sharedData.colour = j.colour;
+                    sharedData.date = j.date;
+                    sharedData.font = j.font;
+                    sharedData.time = j.time;
+                    // alert('loading ... ' + res.obj);
 
                     $scope.myDate = new Date();
+                    $scope.showHours = TimeFactory.showHours();
+                    $scope.showSeconds = TimeFactory.showSeconds();
                     $scope.myColor = ColourFactory.getColor();
                     $scope.myWeight = FontFactory.getWeight();
                     $scope.myDarkestColor = ColourFactory.getDarkestColor();
