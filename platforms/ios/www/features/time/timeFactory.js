@@ -13,7 +13,9 @@ angular.module('kissClock')
         return sharedData.time.show12Hour ? angular.lowercase(hours) : hours;
     }
 
-    self.showSeconds = function() {return sharedData.time.showSeconds ? ":ss" : "";}
+    self.showSeconds = function() {
+        return sharedData.time.showSeconds ? ":ss" : "";
+    }
 
     /* ================================================ */
     /* Internal functions */

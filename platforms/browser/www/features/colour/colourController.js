@@ -28,6 +28,7 @@ angular.module('kissClock')
 
                     $scope.myDate = new Date();
                     $scope.showHours = TimeFactory.showHours();
+
                     $scope.showSeconds = TimeFactory.showSeconds();
                     $scope.myColor = ColourFactory.getColor();
                     $scope.myWeight = FontFactory.getWeight();
@@ -46,7 +47,10 @@ angular.module('kissClock')
         $scope.colorDarker = function() {$scope.myColor = ColourFactory.colorDarker();}
         $scope.colorReset = function() {$scope.myColor = ColourFactory.colorReset();}
 
-        $scope.fontThinner = function() {$scope.myWeight = FontFactory.fontThinner();}
+        $scope.fontThinner = function() {
+            a = FontFactory.fontThinner();
+            $scope.myWeight = a
+        }
         $scope.fontFatter = function() {$scope.myWeight = FontFactory.fontFatter();}
         $scope.fontReset = function() {$scope.myWeight = FontFactory.fontReset();}
     });
