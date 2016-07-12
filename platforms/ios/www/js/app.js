@@ -7,7 +7,7 @@ var db = null;
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitText'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, DBA, sharedData) {
 
     $ionicPlatform.ready(function() {
 
@@ -20,6 +20,29 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             StatusBar.hide();
             ionic.Platform.isFullScreen = true;
         }
+
+        alert('app.js start');
+        DBA.init()
+            .then(function() {
+                alert('start prepare');
+                alert(db);
+                alert('prepare go now');
+                return DBA.prepareTables();
+            })
+            .then(function(cnt) {
+                alert('cnt = ' + cnt);
+                if(cnt == 0) {
+                    DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(sharedData)]);
+                } else {
+                    DBA.query("SELECT c.rowid AS id, c.key AS key, c.obj AS obj FROM Config c WHERE c.rowid = 1")
+                        .then(function(result){
+                            res = DBA.getFirst(result);
+                            alert(res.obj);
+                            sharedData = JSON.parse(res.obj);
+                            alert('app.js done');
+                        });
+                }
+            })
 
     });
 
@@ -39,6 +62,13 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+        .state('welcome', {
+                        cache: false,
+                        url: '/welcome',
+                        templateUrl: 'features/welcome/welcome.html',
+                        controller: 'WelcomeCtrl'
+                    })
+
         .state('time', {
                         cache: false,
                         url: '/time',
@@ -54,6 +84,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
                     })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/time');
+    $urlRouterProvider.otherwise('/welcome');
 
 })
