@@ -10,14 +10,15 @@ angular.module('kissClock')
             try {
                 alert('device');
                 db = $cordovaSQLite.openDB({ name: "kissClock.db" });
+                q.resolve();
             } catch (error) {
                 alert(error);
             }
         } else {
             alert('browser');
             db = window.openDatabase('kissClock.db', '1.0', 'kissClock.db', 100 * 1024 * 1024);
-        }
-        q.resolve();
+            q.resolve();
+        }        
         return q.promise;
     };
 
