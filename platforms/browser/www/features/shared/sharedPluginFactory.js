@@ -5,27 +5,29 @@ angular.module('kissClock')
     var self = this;
 
     self.init = function() {
-
+alert('init');
         var q = $q.defer();
 
         if (ionic.Platform.isAndroid() || ionic.Platform.isIOS() ){
             try {
                 db = $cordovaSQLite.openDB({ name: "kissClock.db" });
+                alert('init done');
                 q.resolve();
             } catch (error) {
                 alert(error);
             }
         } else {
             db = window.openDatabase('kissClock.db', '1.0', 'kissClock.db', 100 * 1024 * 1024);
+            alert('init done');
             q.resolve();
         }
 
         return q.promise;
-        
+
     };
 
     self.prepareTables = function() {
-
+alert('prepare');
         var q = $q.defer();
 
         // self.query("DROP TABLE Config;");
@@ -35,6 +37,7 @@ angular.module('kissClock')
                 return self.query("SELECT COUNT(key) AS result FROM Config;");
             })
             .then(function(result){
+                alert('prepare done');
                 q.resolve(self.getCount(result));
             })
 

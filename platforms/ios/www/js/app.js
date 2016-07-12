@@ -21,6 +21,9 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             ionic.Platform.isFullScreen = true;
         }
 
+        //Initialize database and give it question and picker data.
+        DBA.init();
+
     });
 
 })
