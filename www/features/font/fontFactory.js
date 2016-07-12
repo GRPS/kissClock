@@ -13,18 +13,18 @@ angular.module('kissClock')
     }
 
     self.fontThinner = function() {
-        sharedData.font.index = (sharedData.font.index == (sharedData.font.list.length-1) ? sharedData.font.index : sharedData.font.index+1);
-        return sharedData.font.index;
+        sharedData.font.index = (sharedData.font.index == 0 ? 0 : sharedData.font.index-1);
+        return self.getWeight();
     }
 
     self.fontFatter = function() {
-        sharedData.font.index = (sharedData.font.index == 0 ? 0 : sharedData.font.index-1);
-        return sharedData.font.index;
+        sharedData.font.index = (sharedData.font.index == (sharedData.font.weights.length-1) ? sharedData.font.index : sharedData.font.index+1);
+        return self.getWeight();
     }
 
     self.fontReset = function() {
         sharedData.font.index = sharedData.font.start;
-        return sharedData.font.index;
+        return self.getWeight();
     }
 
 
