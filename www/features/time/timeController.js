@@ -2,6 +2,10 @@ angular.module('kissClock')
 
 .controller('TimeCtrl', function($ionicPlatform, $scope, $state, $interval, sharedData, DBA, TimeFactory) {
 
+    alert('TimeCtrl dd is now...');
+    alert(db);
+    alert("let's go");
+
     var tick = function() {
         $scope.clock = Date.now();
     }
@@ -13,6 +17,7 @@ angular.module('kissClock')
     $scope.showConfig = function() {$state.go("config");}
 
     $ionicPlatform.ready(function() {
+        alert('ready');
 
         window.plugins.insomnia.keepAwake();
 

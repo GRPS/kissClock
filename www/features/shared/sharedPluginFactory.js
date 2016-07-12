@@ -5,16 +5,21 @@ angular.module('kissClock')
     var self = this;
 
     self.init = function() {
+        alert('init db is ...');
+        alert(db);
         if (ionic.Platform.isAndroid() || ionic.Platform.isIOS() ){
             try {
+                alert('device');
                 db = $cordovaSQLite.openDB({ name: "kissClock.db" });
             } catch (error) {
                 alert(error);
             }
         } else {
+            alert('browser');
             db = window.openDatabase('kissClock.db', '1.0', 'kissClock.db', 100 * 1024 * 1024);
         }
-
+        alert('init dd is now...');
+        alert(db);
     };
 
     self.prepareTables = function() {
