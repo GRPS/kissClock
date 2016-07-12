@@ -26,12 +26,16 @@ angular.module('kissClock')
         var q = $q.defer();
 
         // self.query("DROP TABLE Config;");
-
+alert('prepare 1');
+alert(db);
+alert('prepare 2');
         self.query("CREATE TABLE IF NOT EXISTS Config (key TEXT NOT NULL, obj BLOB);")
             .then(function() {
+                alert('prepare 3');
                 return self.query("SELECT COUNT(key) AS result FROM Config;");
             })
             .then(function(result){
+                alert('prepare 4');
                 q.resolve(self.getCount(result));
             })
 
@@ -49,6 +53,7 @@ angular.module('kissClock')
                 q.resolve(result);
             }, function (err) {
                 console.error(err);
+                alert(err);
             });
 
         return q.promise;

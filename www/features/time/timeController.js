@@ -5,6 +5,7 @@ angular.module('kissClock')
     alert('start');
     DBA.init()
         .then(function() {
+            alert('start prepare');
             return DBA.prepareTables();
         })
         .then(function(cnt) {
