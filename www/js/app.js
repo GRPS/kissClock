@@ -7,9 +7,11 @@ var db = null;
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitText'])
 
-.run(function($ionicPlatform, $cordovaSQLite, DBA) {
+.run(function($ionicPlatform) {
 
     $ionicPlatform.ready(function() {
+
+        alert('app.js 1');
 
         if(window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -21,9 +23,13 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             ionic.Platform.isFullScreen = true;
         }
 
+<<<<<<< HEAD
         alert('app.js');
 
 
+=======
+        alert('app.js 2');
+>>>>>>> develop
 
     });
 
