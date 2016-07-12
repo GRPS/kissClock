@@ -10,7 +10,7 @@
     <ion-content id="time" has-header="true" padding="true" overflow-scroll="false" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-hold="showConfig()" on-swipe-left="fontThinner()" on-swipe-right="fontFatter()">
         <div class="row row-center">
             <div class="col col-center text-center">
-                <h1 data-fittext ng-style="{'color':myColor, 'font-weight':myWeight}">{{ clock | date: showHours+'mm'+showSeconds}}</h1>
+                <h1 data-fittext=".9"  ng-style="{'color':myColor, 'font-weight':myWeight}" data-fittext-load-delay="300">{{ clock | date: showHours+'mm'+showSeconds}}</h1>
             </div>
         </div>
     </ion-content>
