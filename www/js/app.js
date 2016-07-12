@@ -62,6 +62,13 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+        .state('welcome', {
+                        cache: false,
+                        url: '/welcome',
+                        templateUrl: 'features/welcome/welcome.html',
+                        controller: 'WelcomeCtrl'
+                    })
+
         .state('time', {
                         cache: false,
                         url: '/time',
@@ -77,6 +84,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
                     })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/time');
+    $urlRouterProvider.otherwise('/welcome');
 
 })
