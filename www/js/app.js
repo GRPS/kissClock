@@ -11,8 +11,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
 
     $ionicPlatform.ready(function() {
 
-        alert('app.js 1');
-
         if(window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             cordova.plugins.Keyboard.disableScroll(true);
@@ -23,7 +21,27 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             ionic.Platform.isFullScreen = true;
         }
 
-        alert('app.js 2');
+        DBA.init()
+            .then(function() {
+                alert('start prepare');
+                alert(db);
+                alert('prepare go now');
+                return DBA.prepareTables();
+            })
+            .then(function(cnt) {
+                alert('cnt = ' + cnt);
+                if(cnt == 0) {
+                    DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(sharedData)]);
+                } else {
+                    DBA.query("SELECT c.rowid AS id, c.key AS key, c.obj AS obj FROM Config c WHERE c.rowid = 1")
+                        .then(function(result){
+                            res = DBA.getFirst(result);
+                            alert(res.obj);
+                            sharedData = JSON.parse(res.obj);
+                            alert('app.js done');
+                        });
+                }
+            })        
 
     });
 
