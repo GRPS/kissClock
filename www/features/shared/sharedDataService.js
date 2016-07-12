@@ -12,6 +12,11 @@ angular.module('kissClock')
                     start   : 9,            //Colour to start with.
                     index   : 9             //Colour index which user may have changed.
                 },
+            font : {
+                    weights : ['100','200','300','400','500','600','700','800','bolder', 'bolder'],
+                    start   : 3,
+                    index   : 3
+            },
             time : {
                     show12Hour          : false,
                     showHourLeadingZero : true,

@@ -12,6 +12,9 @@
         },
         "cordova-plugin-insomnia": {
             "PACKAGE_NAME": "com.ionicframework.kissclock794237"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.kissclock794237"
         }
     },
     "dependent_plugins": {

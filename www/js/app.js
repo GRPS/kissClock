@@ -1,11 +1,13 @@
 // Ionic Starter App
 
+var db = null;
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitText'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, DBA) {
 
     $ionicPlatform.ready(function() {
 
@@ -18,6 +20,9 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             StatusBar.hide();
             ionic.Platform.isFullScreen = true;
         }
+
+        //Initialize database and give it question and picker data.
+        DBA.init();
 
     });
 
