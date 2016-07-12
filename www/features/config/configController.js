@@ -8,11 +8,18 @@ angular.module('kissClock')
     $scope.back = function() {
         sharedData.colour.list = [];
         $scope.myColor = ColourFactory.getColor();
-        DBA.query("DELETE FROM Config WHERE rowid = 1;")
+        alert('a');
+        alert(sharedData);
+        alert('b');
+        alert(angular.toJson(sharedData));
+        alert('c');
+        DBA.query("DELETE FROM Config;")
             .then(function() {
+                alert('d');
                 DBA.query("INSERT INTO Config (key, obj) values (?, ?)", ["config", angular.toJson(sharedData)]);
             })
             .then(function() {
+                alert('e');
                 $state.go("time");
             })
     }
