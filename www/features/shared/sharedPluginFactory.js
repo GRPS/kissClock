@@ -8,8 +8,9 @@ angular.module('kissClock')
         var q = $q.defer();
         if (ionic.Platform.isAndroid() || ionic.Platform.isIOS() ){
             try {
-                alert('device');
+                alert('device a');
                 db = $cordovaSQLite.openDB({ name: "kissClock.db" });
+                alert('device b');
                 q.resolve();
             } catch (error) {
                 alert(error);
@@ -18,7 +19,7 @@ angular.module('kissClock')
             alert('browser');
             db = window.openDatabase('kissClock.db', '1.0', 'kissClock.db', 100 * 1024 * 1024);
             q.resolve();
-        }        
+        }
         return q.promise;
     };
 
