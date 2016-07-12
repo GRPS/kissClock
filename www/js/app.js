@@ -23,13 +23,7 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ngFitT
             ionic.Platform.isFullScreen = true;
         }
 
-<<<<<<< HEAD
         alert('app.js');
-
-
-=======
-        alert('app.js 2');
->>>>>>> develop
 
     });
 
