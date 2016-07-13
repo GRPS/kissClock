@@ -48,6 +48,8 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
             ionic.Platform.isFullScreen = true;
         }
 
+        angular.bootstrap(document.body, ['kissClock']);
+
     })
 
 })
@@ -66,12 +68,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-        .state('setup', {
-                        cache: false,
-                        url: '/setup',
-                        controller: 'SetupCtrl'
-        })
-
         .state('time', {
                         cache: false,
                         url: '/time',
@@ -87,6 +83,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
         })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/setup');
+    $urlRouterProvider.otherwise('/time');
 
 })

@@ -48,6 +48,8 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
             ionic.Platform.isFullScreen = true;
         }
 
+        angular.bootstrap(document.body, ['kissClock']);
+
     })
 
 })
