@@ -1,6 +1,6 @@
 angular.module('kissClock')
 
-.factory('TimeFactory', function(config) {
+.factory('DateFactory', function(config) {
 
     var self = this;
 
@@ -8,13 +8,17 @@ angular.module('kissClock')
     /* External functions */
     /* ================================================ */
 
-    self.showHours = function() {
-        hours = (config.time.showHourLeadingZero ? "HH:" : "H:");
-        return config.time.show12Hour ? angular.lowercase(hours) : hours;
+    self.isEnabled = function() {
+        return config.date.enabled;
     }
 
-    self.showSeconds = function() {
-        return config.time.showSeconds ? ":ss" : "";
+    self.toggle = function() {
+        config.date.enabled = !config.date.enabled;
+        return config.date.enabled;
+    }
+
+    self.dateFormat = function() {
+        return config.date.format;
     }
 
     /* ================================================ */
