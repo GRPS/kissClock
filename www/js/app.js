@@ -11,17 +11,17 @@ var options = {
                         list    : [],           //List of available colors using shadinge min/max.
                         start   : 9,            //Colour to start with.
                         index   : 9             //Colour index which user may have changed.
-                    },
+                        },
                 font : {
                         weights : ['100','200','300','400','500','600','700','800','bolder', 'bolder'],
                         start   : 3,
                         index   : 3
-                },
+                        },
                 time : {
                         show12Hour          : false,
                         showHourLeadingZero : true,
                         showSeconds         : false
-                    },
+                        },
                 date : {
                         enabled : true,
                         format : "EEEE, dd MMMM yyyy",
@@ -34,7 +34,7 @@ var options = {
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-picker'])
 
-.run(function($ionicPlatform, DBA, sharedData) {
+.run(function($ionicPlatform) {
 
     $ionicPlatform.ready(function() {
 
@@ -48,10 +48,7 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
             ionic.Platform.isFullScreen = true;
         }
 
-        //Initialize database and give it question and picker data.
-        DBA.init();
-
-    });
+    })
 
 })
 
@@ -69,21 +66,27 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+        .state('setup', {
+                        cache: false,
+                        url: '/setup',
+                        controller: 'SetupCtrl'
+        })
+
         .state('time', {
                         cache: false,
                         url: '/time',
                         templateUrl: 'features/time/time.html',
                         controller: 'TimeCtrl'
-                    })
+        })
 
         .state('config', {
                         cache: false,
                         url: '/config',
                         templateUrl: 'features/config/config.html',
                         controller: 'ConfigCtrl'
-                    })
+        })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/time');
+    $urlRouterProvider.otherwise('/setup');
 
 })
