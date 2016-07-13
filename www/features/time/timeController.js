@@ -34,6 +34,13 @@ angular.module('kissClock')
                     $scope.timeHours = TimeFactory.showHours();
                     $scope.timeSeconds = TimeFactory.showSeconds();
 
+                    $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
+                    $scope.showConfig = function() {$state.go("config");}
+                    $scope.colorLighter = function() {$scope.colourUser = ColourFactory.colorLighter();}
+                    $scope.colorDarker = function() {$scope.colourUser = ColourFactory.colorDarker();}
+                    $scope.fontThinner = function() {$scope.fontWeight = FontFactory.fontThinner();}
+                    $scope.fontThicker = function() {$scope.fontWeight = FontFactory.fontThicker();}
+
                     var tick = function() {
                         $scope.currentDate = Date.now();
                     }
@@ -49,12 +56,12 @@ angular.module('kissClock')
     //Do something now the view is rendered.
     $scope.$on("$ionicView.enter", function(event, data) {
 
-        $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
-        $scope.showConfig = function() {$state.go("config");}
-        $scope.colorLighter = function() {$scope.colourUser = ColourFactory.colorLighter();}
-        $scope.colorDarker = function() {$scope.colourUser = ColourFactory.colorDarker();}
-        $scope.fontThinner = function() {$scope.fontWeight = FontFactory.fontThinner();}
-        $scope.fontThicker = function() {$scope.fontWeight = FontFactory.fontThicker();}
+        // $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
+        // $scope.showConfig = function() {$state.go("config");}
+        // $scope.colorLighter = function() {$scope.colourUser = ColourFactory.colorLighter();}
+        // $scope.colorDarker = function() {$scope.colourUser = ColourFactory.colorDarker();}
+        // $scope.fontThinner = function() {$scope.fontWeight = FontFactory.fontThinner();}
+        // $scope.fontThicker = function() {$scope.fontWeight = FontFactory.fontThicker();}
 
     });
 

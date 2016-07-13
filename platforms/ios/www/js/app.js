@@ -14,8 +14,8 @@ var options = {
                         },
                 font : {
                         weights : ['100','200','300','400','500','600','700','800'],
-                        start   : 3,
-                        index   : 3
+                        start   : 4,
+                        index   : 4
                         },
                 time : {
                         show12Hour          : false,
