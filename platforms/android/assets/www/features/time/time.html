@@ -1,17 +1,16 @@
-<ion-view id="time" view-title="kissClock">
+<div id="time" view-title="kissClock">
 
     <ion-header-bar on-hold="dateToggle()">
         <h1 class="title"></h1>
         <div class="buttons">
-            <button class="button button-clear" ng-style="{'color':colourUser}" ng-show="dateEnabled">{{ currentDate | date : dateFormat}}</button>
+            <p class="button button-clear" ng-style="{'color':colourUser}" >{{ currentDate | date : dateFormat}}</p>
         </div>
     </ion-header-bar>
 
-    <ion-content id="time" has-header="true" padding="true" overflow-scroll="false" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-hold="showConfig()" on-swipe-left="fontThinner()" on-swipe-right="fontFatter()">
+    <ion-content id="time" has-header="true" padding="true" overflow-scroll="false" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontThinner()" on-swipe-right="fontThicker()">
         <div class="row row-center">
             <div class="col col-center text-center">
-                <h1 data-fittext=".9" style="color:#ffffff;">{{colourUser}}</h1>
-                <!-- <h1 data-fittext=".9"  ng-style="{'color':colourUser, 'font-weight':myWeight}" data-fittext-load-delay="300">{{ clock | date: showHours+'mm'+showSeconds}}</h1> -->
+                <h1 data-fittext=".9"  ng-style="{'color':colourUser, 'font-weight':fontWeight}" >{{ currentDate | date: timeHours+'mm'+timeSeconds }}</h1>
             </div>
         </div>
     </ion-content>

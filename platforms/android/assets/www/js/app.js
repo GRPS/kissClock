@@ -13,7 +13,7 @@ var options = {
                         index   : 9             //Colour index which user may have changed.
                         },
                 font : {
-                        weights : ['100','200','300','400','500','600','700','800','bolder', 'bolder'],
+                        weights : ['100','200','300','400','500','600','700','800'],
                         start   : 3,
                         index   : 3
                         },
@@ -34,7 +34,7 @@ var options = {
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-picker'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, DBA) {
 
     $ionicPlatform.ready(function() {
 
@@ -48,7 +48,7 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
             ionic.Platform.isFullScreen = true;
         }
 
-        angular.bootstrap(document.body, ['kissClock']);
+        DBA.init();
 
     })
 
@@ -68,12 +68,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-        .state('setup', {
-                        cache: false,
-                        url: '/setup',
-                        controller: 'SetupCtrl'
-        })
-
         .state('time', {
                         cache: false,
                         url: '/time',
@@ -89,6 +83,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-pic
         })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/setup');
+    $urlRouterProvider.otherwise('/time');
 
 })
