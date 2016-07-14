@@ -1,6 +1,6 @@
 angular.module('kissClock')
 
-.controller('TimeCtrl', function($ionicPlatform, $scope, $state, $interval, Config, DBA, ColourFactory, DateFactory, FontFactory, TimeFactory) {
+.controller('TimeCtrl', function($ionicScrollDelegate, $ionicPlatform, $scope, $state, $interval, Config, DBA, ColourFactory, DateFactory, FontFactory, TimeFactory) {
 
     //Do something before the view is rendered. Must be kept to bare minimum, so user is not held waiting necessarily.
     $scope.$on("$ionicView.beforeEnter", function(event, data) {
@@ -33,6 +33,7 @@ angular.module('kissClock')
                     $scope.dateFormat = DateFactory.dateFormat();
                     $scope.timeHours = TimeFactory.showHours();
                     $scope.timeSeconds = TimeFactory.showSeconds();
+                    $scope.fontSize = ($scope.timeSeconds ? "23vw" : "33vw");
 
                     $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
                     $scope.showConfig = function() {$state.go("config");}
@@ -56,12 +57,7 @@ angular.module('kissClock')
     //Do something now the view is rendered.
     $scope.$on("$ionicView.enter", function(event, data) {
 
-        // $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
-        // $scope.showConfig = function() {$state.go("config");}
-        // $scope.colorLighter = function() {$scope.colourUser = ColourFactory.colorLighter();}
-        // $scope.colorDarker = function() {$scope.colourUser = ColourFactory.colorDarker();}
-        // $scope.fontThinner = function() {$scope.fontWeight = FontFactory.fontThinner();}
-        // $scope.fontThicker = function() {$scope.fontWeight = FontFactory.fontThicker();}
+
 
     });
 
