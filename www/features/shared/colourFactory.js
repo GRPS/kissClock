@@ -10,7 +10,6 @@ angular.module('kissClock')
 
     self.getColor = function() {
         if(Config.colour.list.length == 0) {self.prepareColors();}
-        alert("Colour: " + Config.colour.index + "/" + Config.colour.list.length);
         return Config.colour.list[Config.colour.index];
     }
 

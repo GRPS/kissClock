@@ -9,7 +9,6 @@ angular.module('kissClock')
     /* ================================================ */
 
     self.getWeight = function() {
-        alert("Font: " + Config.font.index + "/" + Config.font.weights.length);
         return Config.font.weights[Config.font.index];
     }
 

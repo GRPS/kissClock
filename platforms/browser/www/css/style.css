@@ -1,26 +1,33 @@
-/* Empty. Add your own CSS if you like */
-#time {
-    background-color: #000000 !important;
-}
+/* ============================================*/
+/* General */
+/* ============================================*/
 
-#time .bar { background-color:#000000 !important; border-bottom-color: #000000; background-image: none !important; }
-#time .scroll-content {background-color:#000000 !important;}
+.ptn {padding-top: 0px !important;}
+.pbn {padding-bottom: 0px !important;}
+
+/* ============================================*/
+/* Time */
+/* ============================================*/
+
+#time .bar { background-color:#000000 !important; border-color: #000000;}
+
+#time {background-color: #000000 !important;}
+#time .scroll {
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+  width: 100% !important;
+  height: 100% !important;
+  background-color:#000000 !important;
+}
+#time .scroll h1 {xfont-size:33vw;}
+
+/* ============================================*/
+/* Config */
+/* ============================================*/
 
 #config .item.range {
     border: 0px;
     padding: 0px;
     margin: 0px;
-}
-
-.ptn {padding-top: 0px !important;}
-.pbn {padding-bottom: 0px !important;}
-#time .scroll-content {
-  display: table !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-#time .scroll {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
 }

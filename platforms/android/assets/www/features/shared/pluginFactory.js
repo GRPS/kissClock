@@ -28,7 +28,7 @@ angular.module('kissClock')
 
         var q = $q.defer();
 
-        //self.query("DROP TABLE Config;");
+        // self.query("DROP TABLE Config;");
 
         self.query("CREATE TABLE IF NOT EXISTS Config (key TEXT NOT NULL, obj BLOB);")
             .then(function() {

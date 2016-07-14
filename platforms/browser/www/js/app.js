@@ -7,15 +7,15 @@ var options = {
                         user    : "#265717",    //User defined color.
                         min     : -80,          //Shade user color from percentage.
                         max     : 80,           //Shade user color to percentage.
-                        step    : 10,           //Shade user color step.
+                        step    : 20,           //Shade user color step.
                         list    : [],           //List of available colors using shadinge min/max.
-                        start   : 9,            //Colour to start with.
-                        index   : 9             //Colour index which user may have changed.
+                        start   : 4,            //Colour to start with.
+                        index   : 4             //Colour index which user may have changed.
                         },
                 font : {
-                        weights : ['100','200','300','400','500','600','700','800'],
-                        start   : 4,
-                        index   : 4
+                        weights : ['100','500','800'],//['100','200','300','400','500','600','700','800'],
+                        start   : 1,
+                        index   : 1
                         },
                 time : {
                         show12Hour          : false,
@@ -32,7 +32,7 @@ var options = {
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('kissClock', ['ionic', 'ngCordova', 'ngFitText', 'ionic-color-picker'])
+angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker'])
 
 .run(function($ionicPlatform, DBA) {
 
