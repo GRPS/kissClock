@@ -9,7 +9,7 @@
 /* Time */
 /* ============================================*/
 
-#time .bar { background-color:#000000 !important; border-color: #000000;}
+#time .bar { background-color:#000000 !important; border-top-color: #000000; border-bottom-color: #000000;}
 
 #time {background-color: #000000 !important;}
 #time .scroll {
