@@ -12,11 +12,11 @@
         <ion-list show-delete="false" can-swipe="false">
 
             <label class="item item-divider">
-    			Colour
+    			Style
   			</label>
 
             <ion-item>
-                Choose
+                Colour
                 <label class="toggle item-note">
                     <button class="button button-small" color-picker ng-model="Config.colour.user" modal-title="Choose a color" color-box="{{Config.colour.user}}"></button>
                 </lanbel>
@@ -24,18 +24,19 @@
             <ion-item class="ptn pbn">
                 <div class="list">
                   <div class="item range range-positive">
-                    <i class="icon ion-ios-sunny-outline"></i>
-                    <input type="range" name="brightness" ng-model="Config.colour.index" min="{{brightnessMin}}" max="{{brightnessMax}}" value="{{brightnessIndex}}">
                     <i class="icon ion-ios-sunny"></i>
+                    <input type="range" name="brightness" ng-model="Config.colour.index" min="{{brightnessMin}}" max="{{brightnessMax}}" value="{{brightnessIndex}}">
+                    <i class="icon ion-ios-sunny-outline"></i>
                   </div>
                 </div>
             </ion-item>
+
             <ion-item class="ptn pbn">
                 <div class="list">
                   <div class="item range range-positive">
-                    <i class="icon ion-ios-star-outline"></i>
-                    <input type="range" name="weightness" ng-model="Config.font.index" min="{{weightnessMin}}" max="{{weightnessMax}}" value="{{weightnessIndex}}">
-                    <i class="icon ion-ios-star"></i>
+                    <i class="icon ion-ios-eye"></i>
+                    <input type="range" name="fontness" ng-model="Config.font.index" min="{{fontMin}}" max="{{fontMax}}" value="{{fontIndex}}">
+                    <i class="icon ion-ios-eye-outline"></i>
                   </div>
                 </div>
             </ion-item>

@@ -17,9 +17,9 @@ angular.module('kissClock')
             $scope.brightnessMax = (Config.colour.list).length-1;
             $scope.brightnessIndex = Config.colour.index;
 
-            $scope.weightnessMin = 0;
-            $scope.weightnessMax = (Config.font.weights).length-1;
-            $scope.weightnessIndex = Config.font.weight;
+            $scope.fontMin = 0;
+            $scope.fontMax = (Config.font.list).length-1;
+            $scope.fontIndex = Config.font.index;
 
         });
 

@@ -20,7 +20,7 @@
   height: 100% !important;
   background-color:#000000 !important;
 }
-#time .scroll h1 {xfont-size:33vw;}
+/*#time .scroll h1 {xfont-size:33vw; xfont-family: "ArimaMaduraiRegular";}*/
 
 /* ============================================*/
 /* Config */
@@ -30,4 +30,148 @@
     border: 0px;
     padding: 0px;
     margin: 0px;
+}
+
+/* ============================================*/
+/* Fonts */
+/* ============================================*/
+
+@font-face {
+    font-family: 'ArimaMaduraiRegular';
+    src: url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiRegular.eot');
+    src: url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiRegular.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiRegular.woff2') format('woff2'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiRegular.woff') format('woff'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiRegular.ttf') format('truetype'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiRegular.svg#ArimaMaduraiRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'ArimaMaduraiThin';
+    src: url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiThin.eot');
+    src: url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiThin.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiThin.woff2') format('woff2'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiThin.woff') format('woff'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiThin.ttf') format('truetype'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiThin.svg#ArimaMaduraiThin') format('svg');
+}
+
+@font-face {
+    font-family: 'ArimaMaduraiBold';
+    src: url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiBold.eot');
+    src: url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiBold.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiBold.woff2') format('woff2'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiBold.woff') format('woff'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiBold.ttf') format('truetype'),
+         url('../lib/ionic/fonts/ArimaMadurai/ArimaMaduraiBold.svg#ArimaMaduraiBold') format('svg');
+}
+
+@font-face {
+    font-family: 'OrbitronRegular';
+    src: url('../lib/ionic/fonts/Orbitron/OrbitronRegular.eot');
+    src: url('../lib/ionic/fonts/Orbitron/OrbitronRegular.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronRegular.woff2') format('woff2'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronRegular.woff') format('woff'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronRegular.ttf') format('truetype'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronRegular.svg#OrbitronRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'OrbitronBold';
+    src: url('../lib/ionic/fonts/Orbitron/OrbitronBold.eot');
+    src: url('../lib/ionic/fonts/Orbitron/OrbitronBold.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronBold.woff2') format('woff2'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronBold.woff') format('woff'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronBold.ttf') format('truetype'),
+         url('../lib/ionic/fonts/Orbitron/OrbitronBold.svg#OrbitronBold') format('svg');
+}
+
+@font-face {
+    font-family: 'OswaldLight';
+    src: url('../lib/ionic/fonts/Oswald/OswaldLight.eot');
+    src: url('../lib/ionic/fonts/Oswald/OswaldLight.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/Oswald/OswaldLight.woff2') format('woff2'),
+         url('../lib/ionic/fonts/Oswald/OswaldLight.woff') format('woff'),
+         url('../lib/ionic/fonts/Oswald/OswaldLight.ttf') format('truetype'),
+         url('../lib/ionic/fonts/Oswald/OswaldLight.svg#OswaldLight') format('svg');
+}
+
+@font-face {
+    font-family: 'OswaldRegular';
+    src: url('../lib/ionic/fonts/Oswald/OswaldRegular.eot');
+    src: url('../lib/ionic/fonts/Oswald/OswaldRegular.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/Oswald/OswaldRegular.woff2') format('woff2'),
+         url('../lib/ionic/fonts/Oswald/OswaldRegular.woff') format('woff'),
+         url('../lib/ionic/fonts/Oswald/OswaldRegular.ttf') format('truetype'),
+         url('../lib/ionic/fonts/Oswald/OswaldRegular.svg#OswaldRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('../lib/ionic/fonts/Oswald/OswaldBold.eot');
+    src: url('../lib/ionic/fonts/Oswald/OswaldBold.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/Oswald/OswaldBold.woff2') format('woff2'),
+         url('../lib/ionic/fonts/Oswald/OswaldBold.woff') format('woff'),
+         url('../lib/ionic/fonts/Oswald/OswaldBold.ttf') format('truetype'),
+         url('../lib/ionic/fonts/Oswald/OswaldBold.svg#OswaldBold') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansLight';
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansLight.eot');
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansLight.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansLight.woff2') format('woff2'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansLight.woff') format('woff'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansLight.ttf') format('truetype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansLight.svg#OpenSansLight') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansRegular.eot');
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansRegular.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansRegular.woff2') format('woff2'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansRegular.woff') format('woff'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansRegular.ttf') format('truetype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansBold.eot');
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansBold.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansBold.woff2') format('woff2'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansBold.woff') format('woff'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansBold.ttf') format('truetype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansBold.svg#OpenSansBold') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansExtraBold';
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.eot');
+    src: url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.woff2') format('woff2'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.woff') format('woff'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.ttf') format('truetype'),
+         url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.svg#OpenSansExtraBold') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansCondLight';
+    src: url('../lib/ionic/fonts/OpenSansCond/OpenSansCondLight.eot');
+    src: url('../lib/ionic/fonts/OpenSansCond/OpenSansCondLight.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondLight.woff2') format('woff2'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondLight.woff') format('woff'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondLight.ttf') format('truetype'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondLight.svg#OpenSansCondLight') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansCondBold';
+    src: url('../lib/ionic/fonts/OpenSansCond/OpenSansCondBold.eot');
+    src: url('../lib/ionic/fonts/OpenSansCond/OpenSansCondBold.eot') format('embedded-opentype'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondBold.woff2') format('woff2'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondBold.woff') format('woff'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondBold.ttf') format('truetype'),
+         url('../lib/ionic/fonts/OpenSansCond/OpenSansCondBold.svg#OpenSansCondBold') format('svg');
 }

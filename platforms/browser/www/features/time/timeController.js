@@ -28,19 +28,34 @@ angular.module('kissClock')
 
                     $scope.currentDate = Date.now();
                     $scope.colourUser = ColourFactory.getColor();
-                    $scope.fontWeight = FontFactory.getWeight();
-                    $scope.dateEnabled = DateFactory.isEnabled();
-                    $scope.dateFormat = DateFactory.dateFormat();
                     $scope.timeHours = TimeFactory.showHours();
                     $scope.timeSeconds = TimeFactory.showSeconds();
-                    $scope.fontSize = ($scope.timeSeconds ? "23vw" : "33vw");
+
+                    fontDetails = FontFactory.getFamily();
+                    fontArray = fontDetails.split("-");
+                    $scope.fontFamily = fontArray[0];
+                    $scope.fontSize = ($scope.timeSeconds ? fontArray[2] : fontArray[1])+"vw";
+
+                    $scope.dateEnabled = DateFactory.isEnabled();
+                    $scope.dateFormat = DateFactory.dateFormat();
 
                     $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
                     $scope.showConfig = function() {$state.go("config");}
                     $scope.colorLighter = function() {$scope.colourUser = ColourFactory.colorLighter();}
                     $scope.colorDarker = function() {$scope.colourUser = ColourFactory.colorDarker();}
-                    $scope.fontThinner = function() {$scope.fontWeight = FontFactory.fontThinner();}
-                    $scope.fontThicker = function() {$scope.fontWeight = FontFactory.fontThicker();}
+
+                    $scope.fontLess = function() {
+                        fontDetails = FontFactory.fontLess();
+                        fontArray = fontDetails.split("-");
+                        $scope.fontFamily = fontArray[0];
+                        $scope.fontSize = ($scope.timeSeconds ? fontArray[2] : fontArray[1])+"vw";
+                    }
+                    $scope.fontMore = function() {
+                        fontDetails = FontFactory.fontMore();
+                        fontArray = fontDetails.split("-");
+                        $scope.fontFamily = fontArray[0];
+                        $scope.fontSize = ($scope.timeSeconds ? fontArray[2] : fontArray[1])+"vw";
+                    }
 
                     var tick = function() {
                         $scope.currentDate = Date.now();

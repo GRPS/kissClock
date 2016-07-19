@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ArimaMaduraiRegular';
+    src: url('fonts/ArimaMaduraiRegular.eot');
+    src: url('fonts/ArimaMaduraiRegular.eot') format('embedded-opentype'),
+         url('fonts/ArimaMaduraiRegular.woff2') format('woff2'),
+         url('fonts/ArimaMaduraiRegular.woff') format('woff'),
+         url('fonts/ArimaMaduraiRegular.ttf') format('truetype'),
+         url('fonts/ArimaMaduraiRegular.svg#ArimaMaduraiRegular') format('svg');
+}

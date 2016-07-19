@@ -8,25 +8,20 @@ angular.module('kissClock')
     /* External functions */
     /* ================================================ */
 
-    self.getWeight = function() {
-        return Config.font.weights[Config.font.index];
+    self.getFamily = function() {
+        Config.font.family = Config.font.list[Config.font.index];
+        return Config.font.family;
     }
 
-    self.fontThinner = function() {
+    self.fontLess = function() {
         if(Config.font.index > 0) {Config.font.index--;}
-        return self.getWeight();
+        return self.getFamily();
     }
 
-    self.fontThicker = function() {
-        if(Config.font.index < (Config.font.weights.length)-1) {Config.font.index++;}
-        return self.getWeight();
+    self.fontMore = function() {
+        if(Config.font.index < (Config.font.list.length)-1) {Config.font.index++;}
+        return self.getFamily();
     }
-
-    self.fontReset = function() {
-        Config.font.index = Config.font.start;
-        return self.getWeight();
-    }
-
 
     return self;
 

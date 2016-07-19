@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ArimaMaduraiThin';
+    src: url('fonts/ArimaMaduraiThin.eot');
+    src: url('fonts/ArimaMaduraiThin.eot') format('embedded-opentype'),
+         url('fonts/ArimaMaduraiThin.woff2') format('woff2'),
+         url('fonts/ArimaMaduraiThin.woff') format('woff'),
+         url('fonts/ArimaMaduraiThin.ttf') format('truetype'),
+         url('fonts/ArimaMaduraiThin.svg#ArimaMaduraiThin') format('svg');
+}
