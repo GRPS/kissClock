@@ -2,6 +2,11 @@
 
 var db = null;
 
+//Goto google fonts and download.
+//Then goto https://everythingfonts.com/font-face to get all variations of type.
+//Then add to styles.css
+//Then add reference here
+
 var options = {
                 colour : {
                         user    : "#265717",    //User defined color.
@@ -13,9 +18,10 @@ var options = {
                         index   : 4             //Colour index which user may have changed.
                         },
                 font : {
-                        weights : ['100','500','800'],//['100','200','300','400','500','600','700','800'],
-                        start   : 1,
-                        index   : 1
+                        list    : ["OpenSansLight-36-23", "OpenSansRegular-36-23", "OpenSansBold-36-23", "OpenSansExtraBold-36-23", "OpenSansCondLight-50-32", "OpenSansCondBold-44-26", "OswaldLight-40-27", "OswaldRegular-40-27", "OswaldBold-37-27","OrbitronRegular-25-16", "OrbitronBold-25-16", "ArimaMaduraiThin-35-23", "ArimaMaduraiRegular-35-23", "ArimaMaduraiBold-35-20"],
+                        family  : "OpenSansLight-36-23",
+                        start   : 0,
+                        index   : 0,
                         },
                 time : {
                         show12Hour          : false,
@@ -32,7 +38,7 @@ var options = {
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker'])
+angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ionic-modal-select'])
 
 .run(function($ionicPlatform, DBA) {
 
