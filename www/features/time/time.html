@@ -14,7 +14,7 @@
         </div>
     </ion-footer-bar>
 
-    <ion-content id="time" class="has-header has-footer" overflow-scroll="false" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontLess()" on-swipe-right="fontMore()">
+    <ion-content id="time" class="has-header has-footer" scroll="false" overflow-scroll="false" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontLess()" on-swipe-right="fontMore()">
         <div class="row row-center">
             <div class="col col-center text-center">
                 <h1 ng-style="{'color':colourUser, 'font-size': fontSize, 'font-family':fontFamily}" >{{ currentDate | date: timeHours+'mm'+timeSeconds }}</h1>
