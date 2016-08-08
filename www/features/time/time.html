@@ -1,20 +1,6 @@
 <div id="time" view-title="kissClock">
 
-    <ion-header-bar on-hold="dateToggle()">
-        <h1 class="title"></h1>
-        <div class="buttons">
-            <p class="button button-clear" ng-style="{'color':colourUser}" ng-show="dateEnabled">{{ currentDate | date : dateFormat}}</p>
-        </div>
-    </ion-header-bar>
-
-    <ion-footer-bar>
-        <h1 class="title"></h1>
-        <div class="buttons">
-            <p class="button button-clear" ng-style="{'color':colourUser}" ng-show="dateEnabled"><i class="icon ion-ios-alarm-outline"></i></i></p>
-        </div>
-    </ion-footer-bar>
-
-    <ion-content id="time" class="has-header has-footer" scroll="false" overflow-scroll="false" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontLess()" on-swipe-right="fontMore()">
+    <ion-content id="time" class="" scroll="false" overflow-scroll="false" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontLess()" on-swipe-right="fontMore()">
         <div class="row row-center">
             <div class="col col-center text-center">
                 <h1 ng-style="{'color':colourUser, 'font-size': fontSize, 'font-family':fontFamily}" >{{ currentDate | date: timeHours+'mm'+timeSeconds }}</h1>

@@ -18,7 +18,7 @@ var options = {
                         index   : 4             //Colour index which user may have changed.
                         },
                 font : {
-                        list    : ["OpenSansLight-36-23", "OpenSansRegular-36-23", "OpenSansBold-36-23", "OpenSansExtraBold-36-23", "OpenSansCondLight-50-32", "OpenSansCondBold-44-26", "OswaldLight-40-27", "OswaldRegular-40-27", "OswaldBold-37-27","OrbitronRegular-25-16", "OrbitronBold-25-16", "ArimaMaduraiThin-35-23", "ArimaMaduraiRegular-35-23", "ArimaMaduraiBold-35-20"],
+                        list    : ["OpenSansLight-36-23", "OpenSansRegular-36-23", "OpenSansBold-36-23", "OpenSansExtraBold-36-23"],
                         family  : "OpenSansLight-36-23",
                         start   : 0,
                         index   : 0,
