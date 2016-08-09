@@ -13,23 +13,16 @@ angular.module('kissClock')
         return Config.time.show12Hour ? angular.lowercase(hours) : hours;
     }
 
-    self.getOrientation = function() {
-        var orientation="landscape";
-        alert(JSON.stringify(screen.orientation));
-        if(screen.orientation.angle == -90 || screen.orientation.angle == 90) orientation = "landscape";
-        return orientation;
-    }
-
     self.getTimeSpec = function() {
 
-        if(self.getOrientation() == "landscape") {
+        if(screen.orientation == "landscape") {
             sep = ":";
             size = Config.font.size;
         } else {
             sep = "";
             size = Config.font.size + 30;
         }
-        return {"separator": sep, "fontSize": size + "vw", "orientation": self.getOrientation()};
+        return {"separator": sep, "fontSize": size + "vw", "orientation": screen.orientation};
     }
 
     /* ================================================ */
