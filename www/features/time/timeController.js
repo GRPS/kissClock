@@ -8,14 +8,14 @@ angular.module('kissClock')
         $ionicPlatform.ready(function() {
 
             window.plugins.insomnia.keepAwake();
-            alert("initial angle = "+screen.orientation.angle);
-            window.addEventListener("deviceorientation", function(){
-                alert("deviceorientation");
-                spec = TimeFactory.getTimeSpec();
-                alert(JSON.Stringify(spec));
-                $scope.fontSize = spec.fontSize;
-                $scope.timeSep = spec.separator;
-            });
+            // alert("initial angle = "+screen.orientation.angle);
+            // window.addEventListener("deviceorientation", function(){
+            //     alert("deviceorientation");
+            //     spec = TimeFactory.getTimeSpec();
+            //     alert(JSON.Stringify(spec));
+            //     $scope.fontSize = spec.fontSize;
+            //     $scope.timeSep = spec.separator;
+            // });
 
             DBA.prepareTables()
                 .then(function(cnt) {
@@ -38,7 +38,7 @@ angular.module('kissClock')
                     $scope.colourUser = ColourFactory.getColor();
 
                     spec = TimeFactory.getTimeSpec();
-                    $scope.fontSize = spec.fontSize;
+                    //$scope.fontSize = spec.fontSize;
                     $scope.timeSep = spec.separator;
                     $scope.timeHours = TimeFactory.showHours();
                     $scope.fontFamily = FontFactory.getFamily();
