@@ -28,7 +28,7 @@ angular.module('kissClock')
             sep = "";
             size = Config.font.size + 30;
         }
-        return {"separator": sep, "fontSize": size + "vw"};
+        return {"separator": sep, "fontSize": size + "vw", "orientation": self.getOrientation()};
     }
 
     /* ================================================ */

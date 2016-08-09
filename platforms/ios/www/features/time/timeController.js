@@ -11,6 +11,7 @@ angular.module('kissClock')
 
             window.addEventListener("orientationchange", function(){
                 spec = TimeFactory.getTimeSpec();
+                alert(JSON.stringify(spec));
                 $scope.fontSize = spec.fontSize;
                 $scope.timeSep = spec.separator;
             });
@@ -38,9 +39,10 @@ angular.module('kissClock')
                     spec = TimeFactory.getTimeSpec();
                     $scope.fontSize = spec.fontSize;
                     $scope.timeSep = spec.separator;
+                    alert(JSON.stringify(spec));
                     $scope.timeHours = TimeFactory.showHours();
                     $scope.fontFamily = FontFactory.getFamily();
-                    blink = true;
+                    blink = false;
 
                     $scope.dateEnabled = DateFactory.isEnabled();
 
