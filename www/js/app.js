@@ -39,7 +39,7 @@ var options = {
 // the 2nd parameter is an array of 'requires'
 angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ionic-modal-select'])
 
-.run(function($ionicPlatform, DBA) {
+.run(function($ionicPlatform, DBA, TimeFactory) {
 
     $ionicPlatform.ready(function() {
 
@@ -52,6 +52,12 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ionic-
             StatusBar.hide();
             ionic.Platform.isFullScreen = true;
         }
+
+        window.addEventListener("orientationchange", function(){
+            spec = TimeFactory.getTimeSpec();
+            alert("app.js says ... " + JSON.Stringify(spec));
+        });
+
 
         DBA.init();
 
