@@ -15,6 +15,7 @@ angular.module('kissClock')
 
     self.getOrientation = function() {
         var orientation="landscape";
+        alert(JSON.stringify(screen.orientation));
         if(screen.orientation.angle == -90 || screen.orientation.angle == 90) orientation = "landscape";
         return orientation;
     }
