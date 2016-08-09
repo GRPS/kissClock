@@ -1,6 +1,16 @@
-<div id="time" view-title="kissClock">
+<div id="time" class="Aligner" view-title="kissClock" style="color:red;">
 
-    <ion-header-bar on-hold="dateToggle()">
+    <div style="position:absolute; right:10px;">
+        <h4 ng-style="{'color':colourUser}" ng-show="dateEnabled">{{ currentDate | date : "EEEE, d MMMM yyyy"}}</h4>
+    </div>
+
+    <div class="Aligner-item text-center" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontLess()" on-swipe-right="fontMore()">
+        <h1 ng-style="{'color':colourUser, 'font-size': fontSize, 'font-family':fontFamily}" >
+            {{ currentDate | date: timeHours + timeSep + 'mm' }}
+        </h1>
+    </div>
+
+    <!-- <ion-header-bar on-hold="dateToggle()">
         <h1 class="title"></h1>
         <div class="buttons">
             <button class="button button-clear" ng-style="{'color':colourUser}" ng-show="dateEnabled">{{ currentDate | date : dateFormat}}</button>
@@ -13,10 +23,10 @@
 
     <ion-content id="time" class="has-header has-footer" scroll="false" overflow-scroll="false" on-hold="showConfig()" on-swipe-up="colorLighter()" on-swipe-down="colorDarker()" on-swipe-left="fontLess()" on-swipe-right="fontMore()">
         <div class="row row-center">
-            <div class="col col-center text-center">
+            <div class="col xcol-center xtext-center">
                 <h1 ng-style="{'color':colourUser, 'font-size': fontSize, 'font-family':fontFamily}" >{{ currentDate | date: timeHours+'mm'+timeSeconds }}</h1>
             </div>
         </div>
-    </ion-content>
+    </ion-content> -->
 
-</ion-view>
+</div>
