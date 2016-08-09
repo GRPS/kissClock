@@ -11,6 +11,7 @@ angular.module('kissClock')
 
             window.addEventListener("orientationchange", function(){
                 spec = TimeFactory.getTimeSpec();
+                alert(JSON.Stringify(spec));
                 $scope.fontSize = spec.fontSize;
                 $scope.timeSep = spec.separator;
             });
