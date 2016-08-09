@@ -38,7 +38,7 @@ angular.module('kissClock')
                     $scope.colourUser = ColourFactory.getColor();
 
                     spec = TimeFactory.getTimeSpec();
-                    //$scope.fontSize = spec.fontSize;
+                    $scope.fontSize = spec.fontSize;
                     $scope.timeSep = spec.separator;
                     $scope.timeHours = TimeFactory.showHours();
                     $scope.fontFamily = FontFactory.getFamily();
