@@ -9,7 +9,8 @@ angular.module('kissClock')
 
             window.plugins.insomnia.keepAwake();
             alert("initial angle = "+screen.orientation.angle);
-            window.addEventListener("orientationchange", function(o){
+            window.addEventListener("deviceorientation", function(){
+                alert("deviceorientation");
                 spec = TimeFactory.getTimeSpec();
                 alert(JSON.Stringify(spec));
                 $scope.fontSize = spec.fontSize;
