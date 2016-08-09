@@ -8,8 +8,8 @@ angular.module('kissClock')
         $ionicPlatform.ready(function() {
 
             window.plugins.insomnia.keepAwake();
-
-            window.addEventListener("orientationchange", function(){
+            alert("initial angle = "+screen.orientation.angle);
+            window.addEventListener("orientationchange", function(o){
                 spec = TimeFactory.getTimeSpec();
                 alert(JSON.Stringify(spec));
                 $scope.fontSize = spec.fontSize;

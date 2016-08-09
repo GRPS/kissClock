@@ -14,15 +14,18 @@ angular.module('kissClock')
     }
 
     self.getTimeSpec = function() {
-
-        if(screen.orientation == "landscape") {
+        console.log("initial angle = "+screen.orientation.angle);
+        angle = screen.orientation.angle;
+        if(angle == 0) {
+            sep = "";
+            size = Config.font.size + 25;
+            lp = "portraite";
+        } else {
             sep = ":";
             size = Config.font.size;
-        } else {
-            sep = "";
-            size = Config.font.size + 30;
+            lp = "landscape";
         }
-        return {"separator": sep, "fontSize": size + "vw", "orientation": screen.orientation};
+        return {"separator": sep, "fontSize": size + "vw", "orientation": lp};
     }
 
     /* ================================================ */
