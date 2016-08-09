@@ -107,9 +107,9 @@
 
 
 @media only screen and (orientation: landscape) {
-    Aligner-item h1 {color:red !important;}
+    Aligner-item h1 {font-size:36vw !important;}
 }
 
 @media only screen and (orientation: portraite) {
-    Aligner-item h1 {color:yellow !important;}
+    Aligner-item h1 {font-size:56vw !important;}
 }
