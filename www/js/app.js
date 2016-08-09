@@ -53,12 +53,6 @@ angular.module('kissClock', ['ionic', 'ngCordova', 'ionic-color-picker', 'ionic-
             ionic.Platform.isFullScreen = true;
         }
 
-        window.addEventListener("orientationchange", function(){
-            spec = TimeFactory.getTimeSpec();
-            alert("app.js says ... " + JSON.Stringify(spec));
-        });
-
-
         DBA.init();
 
     })
