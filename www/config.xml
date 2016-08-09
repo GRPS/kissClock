@@ -30,6 +30,7 @@
   <plugin name="ionic-plugin-keyboard" spec="~2.2.0" />
   <plugin name="io.litehelpers.cordova.sqlite" spec="0.7.10" source="pgb" />
   <plugin name="cordova-plugin-insomnia" />
+  <plugin name="cordova-plugin-screen-orientation" />
 
   <platform name="android">
     <icon src="resources/android/drawable-hdpi/icon.png" density="ldpi"/>

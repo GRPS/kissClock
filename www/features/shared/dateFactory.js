@@ -17,10 +17,6 @@ angular.module('kissClock')
         return Config.date.enabled;
     }
 
-    self.dateFormat = function() {
-        return Config.date.format;
-    }
-
     /* ================================================ */
     /* Internal functions */
     /* ================================================ */

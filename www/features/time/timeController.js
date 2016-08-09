@@ -9,6 +9,12 @@ angular.module('kissClock')
 
             window.plugins.insomnia.keepAwake();
 
+            window.addEventListener("orientationchange", function(){
+                spec = TimeFactory.getTimeSpec();
+                $scope.fontSize = spec.fontSize;
+                $scope.timeSep = spec.separator;
+            });
+
             DBA.prepareTables()
                 .then(function(cnt) {
                     if(cnt == 0) {
@@ -28,16 +34,15 @@ angular.module('kissClock')
 
                     $scope.currentDate = Date.now();
                     $scope.colourUser = ColourFactory.getColor();
-                    $scope.timeHours = TimeFactory.showHours();
-                    $scope.timeSeconds = TimeFactory.showSeconds();
 
-                    fontDetails = FontFactory.getFamily();
-                    fontArray = fontDetails.split("-");
-                    $scope.fontFamily = fontArray[0];
-                    $scope.fontSize = ($scope.timeSeconds ? fontArray[2] : fontArray[1])+"vw";
+                    spec = TimeFactory.getTimeSpec();
+                    $scope.fontSize = spec.fontSize;
+                    $scope.timeSep = spec.separator;
+                    $scope.timeHours = TimeFactory.showHours();
+                    $scope.fontFamily = FontFactory.getFamily();
+                    blink = true;
 
                     $scope.dateEnabled = DateFactory.isEnabled();
-                    $scope.dateFormat = DateFactory.dateFormat();
 
                     $scope.dateToggle = function(){$scope.dateEnabled = DateFactory.toggle();}
                     $scope.showConfig = function() {$state.go("config");}
@@ -45,20 +50,18 @@ angular.module('kissClock')
                     $scope.colorDarker = function() {$scope.colourUser = ColourFactory.colorDarker();}
 
                     $scope.fontLess = function() {
-                        fontDetails = FontFactory.fontLess();
-                        fontArray = fontDetails.split("-");
-                        $scope.fontFamily = fontArray[0];
-                        $scope.fontSize = ($scope.timeSeconds ? fontArray[2] : fontArray[1])+"vw";
+                        $scope.fontFamily = FontFactory.fontLess();
                     }
                     $scope.fontMore = function() {
-                        fontDetails = FontFactory.fontMore();
-                        fontArray = fontDetails.split("-");
-                        $scope.fontFamily = fontArray[0];
-                        $scope.fontSize = ($scope.timeSeconds ? fontArray[2] : fontArray[1])+"vw";
+                        $scope.fontFamily = FontFactory.fontMore();
                     }
 
                     var tick = function() {
                         $scope.currentDate = Date.now();
+                        blink = !blink;
+                        if(Config.time.blinkSeconds && $scope.timeSep != "") {
+                            $scope.timeSep = (blink?":":".");
+                        }
                     }
                     tick();
                     $interval(tick, 1000);

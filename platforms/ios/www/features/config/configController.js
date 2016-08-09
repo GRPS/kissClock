@@ -35,7 +35,6 @@ angular.module('kissClock')
                 Config.colour.list = [];
                 $scope.myColor = ColourFactory.getColor();
                 j = angular.toJson(Config);
-                // alert('saving ... ' + j);
 
                 DBA.query("DELETE FROM Config;")
                     .then(function() {

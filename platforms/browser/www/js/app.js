@@ -18,20 +18,19 @@ var options = {
                         index   : 4             //Colour index which user may have changed.
                         },
                 font : {
-                        list    : ["OpenSansLight-36-23", "OpenSansRegular-36-23", "OpenSansBold-36-23", "OpenSansExtraBold-36-23"],
-                        family  : "OpenSansLight-36-23",
+                        list    : ["OpenSansLight", "OpenSansRegular", "OpenSansBold", "OpenSansExtraBold"],
+                        family  : "OpenSansLight",
                         start   : 0,
                         index   : 0,
+                        size    : 36
                         },
                 time : {
                         show12Hour          : false,
                         showHourLeadingZero : true,
-                        showSeconds         : false
+                        blinkSeconds        : false
                         },
                 date : {
-                        enabled : true,
-                        format : "EEEE, dd MMMM yyyy",
-                        formats : ['EEEE, dd MMMM yyyy','dd/mm/yyyy']
+                        enabled : true
                         }
                 }
 

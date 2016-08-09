@@ -9,12 +9,26 @@ angular.module('kissClock')
     /* ================================================ */
 
     self.showHours = function() {
-        hours = (Config.time.showHourLeadingZero ? "HH:" : "H:");
+        hours = (Config.time.showHourLeadingZero ? "HH" : "H");
         return Config.time.show12Hour ? angular.lowercase(hours) : hours;
     }
 
-    self.showSeconds = function() {
-        return Config.time.showSeconds ? ":ss" : "";
+    self.getOrientation = function() {
+        var orientation="landscape";
+        if(screen.orientation.angle == -90 || screen.orientation.angle == 90) orientation = "landscape";
+        return orientation;
+    }
+
+    self.getTimeSpec = function() {
+
+        if(self.getOrientation() == "landscape") {
+            sep = ":";
+            size = Config.font.size;
+        } else {
+            sep = "";
+            size = Config.font.size + 30;
+        }
+        return {"separator": sep, "fontSize": size + "vw"};
     }
 
     /* ================================================ */

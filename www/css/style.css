@@ -75,3 +75,32 @@
          url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.ttf') format('truetype'),
          url('../lib/ionic/fonts/OpenSans/OpenSansExtraBold.svg#OpenSansExtraBold') format('svg');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 100%;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
